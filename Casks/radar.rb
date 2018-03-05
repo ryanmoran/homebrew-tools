@@ -1,6 +1,6 @@
 cask "radar" do
-  version "0.12"
-  sha256 "f6d85bd9b866692171d20ea0ee426ba742da71b7f1ddeea43dd0cf3bc8706bda"
+  version "0.13"
+  sha256 "b64e0904eadfe58e9b261b79953865a185989c32b682bfcd274943784868884c"
 
   url "https://storage.googleapis.com/radar-builds/Radar-#{version}.tar.gz"
   name "Radar"
