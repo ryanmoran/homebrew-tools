@@ -1,14 +1,14 @@
 class Faux < Formula
   desc "Golang fake generator"
   homepage "https://github.com/ryanmoran/faux"
-  version "v0.6.0"
+  version "v0.7.0"
 
   if OS.mac?
     url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-darwin-amd64"
-    sha256 "1c7e57cf8c0269421fe96df049160aa7ce558b3f4dd2ca8eb0ef1c89564a3115"
+    sha256 "2d572bbc9044a48242b21409a8c62e35caf1126f06c49ef8a7a4784507537504"
   elsif OS.linux?
     url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-linux-amd64"
-    sha256 "49ef60ce7ff6ebe4eec1edd09b9b7360c382edd49c524bd528c5e3a411bd4944"
+    sha256 "a311d281831f9dbd7a470e39064e7013d25dbdb10c32a91e9b11443cabe6cf3a"
   end
 
   depends_on :arch => :x86_64
