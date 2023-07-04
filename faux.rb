@@ -1,24 +1,41 @@
 class Faux < Formula
   desc "Golang fake generator"
   homepage "https://github.com/ryanmoran/faux"
-  version "v0.22.2"
+  version "v0.22.3"
 
-  if OS.mac?
-    url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-darwin-amd64"
-    sha256 "c3891606bd0e611fb712e012d9806bb34a49aa763efa0d5927ae3800635de37d"
-  elsif OS.linux?
-    url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-linux-amd64"
-    sha256 "7d86f76d637e3db63eebfdef5250aa58f056cece8b1c2a958339fc6f8d0519b6"
+  on_macos do
+    on_intel do
+      url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-darwin-amd64"
+      sha256 "4814e6337300002c295e0018c64c040b82721e162ac6cf236e18928878c1a22f"
+    end
+    on_arm do
+      url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-darwin-arm64"
+      sha256 "cf4ec47bbb531d81dd4ceb544a8fc3cead147550a0a75df5297939d3b0b57b16"
+    end
   end
 
-  depends_on :arch => :x86_64
+  on_linux do
+    on_intel do
+      url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-linux-amd64"
+      sha256 "d87e941d57d2556def763e5097b73d41512f3fd0b9497e6f807c9a9aa4075f91"
+    end
+    on_arm do
+      url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-linux-arm64"
+      sha256 "a5cd8167ec071ad81ccb0e8538d935bdb98fa8d2a8eeb88d4603194ab51e894b"
+    end
+  end
 
   def install
     binary_name = "faux"
-    if OS.mac?
+    case
+    when OS.mac? && Hardware::CPU.intel?
       bin.install "faux-darwin-amd64" => binary_name
-    elsif OS.linux?
+    when OS.mac? && Hardware::CPU.arm?
+      bin.install "faux-darwin-arm64" => binary_name
+    when OS.linux? && Hardware::CPU.intel?
       bin.install "faux-linux-amd64" => binary_name
+    when OS.linux? && Hardware::CPU.arm?
+      bin.install "faux-linux-arm64" => binary_name
     end
   end
 
