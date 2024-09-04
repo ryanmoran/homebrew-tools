@@ -1,27 +1,27 @@
 class Faux < Formula
   desc "Golang fake generator"
   homepage "https://github.com/ryanmoran/faux"
-  version "v0.23.0"
+  version "v0.23.1"
 
   on_macos do
     on_intel do
       url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-darwin-amd64"
-      sha256 "825462fca58d0dfea4defdbfa85e248d18b059afd849e0ac2c8c73ff2bb05e59"
+      sha256 "69014970d01e228f9c67ddc078fb1937db41252d9b10816c667da85637335012"
     end
     on_arm do
       url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-darwin-arm64"
-      sha256 "95f64ad49d11980b26fc20ca51d6270585f93a921cb8eedcbd019a92392fbc3e"
+      sha256 "5d104d07111af49fcebb78b77d217de3c12672eda149e749f914347ee13cc343"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-linux-amd64"
-      sha256 "363576e3954dfac37234a74f306fe98181c2f0717e094396f82a39430640c1f1"
+      sha256 "5b18a2a9f1ffdc7e5a18809f99a1aef23dbfcbc13e42e79dcda557caf4d1bfe2"
     end
     on_arm do
       url "https://github.com/ryanmoran/faux/releases/download/#{version}/faux-linux-arm64"
-      sha256 "ec54eb03ecfe598a1e12306d1c1d0664ded3032f81e893d0a990dbc04d9c0ce5"
+      sha256 "c0b16eb67b927d692e2614e1291b22e0a64c57d4253fbbd8ab4cae2f97a232fd"
     end
   end
 
